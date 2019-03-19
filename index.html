@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +11,20 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-
+            
     <title>Train Scheduler</title>
 </head>
 
 <body>
-    <div class="container">
-        <header class="center-align green accent-3">This is the Header</header>
-        <main>
-            <div class="table">
-                <div class="header left-align green darken-3 white-text">Current Train Schedule</div>
+
+    <header class="center-align teal lighten-1 white-text">
+        <div class="container main-header z-depth-2"><span class="main-header-text">Train Scheduler</span></div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="table z-depth-2">
+                <div class="header left-align teal lighten-1 white-text">Current Train Schedule</div>
                 <div class="table-stuff">
                     <table class="schedule-table">
                         <thead class="center-align">
@@ -29,46 +32,40 @@
                             <th>Destination</th>
                             <th>Frequency (min)</th>
                             <th>Next Arrival</th>
-                            <th>Minutes Away</th>
+                            <th>Wait Time</th>
                         </thead>
-                        <tr>
-                            <td>Trenton Express</td>
-                            <td>Trenton</td>
-                            <td>25</td>
-                            <td>05:35 PM</td>
-                            <td>10</td>
-                        </tr>
                     </table>
                 </div>
             </div>
-            <div class="form">
-                <div class="header left-align green darken-3 white-text">Add Train</div>
+            <div class="form z-depth-2">
+                <div class="header left-align teal lighten-1 white-text">Add Train</div>
                 <form action="">
-
-                    <input type="text" id="train-name">
+                    
+                    <input type="text" id="train-name" placeholder="Oregon Trail">
                     <label for="train-name">Train Name</label>
-
-                    <input type="text" id="destination">
+                    <br><br>
+                    <input type="text" id="destination" placeholder="Salem, Oregon">
                     <label for="destination">Destination</label>
+                    <br><br>
+                    <input type="text" id="first-train-time" placeholder="17:55">
+                    <label for="first-train-time">First Train Time (HH:mm --military time--)</label>
+                    <br><br>
+                    <input type="number" id="frequency" placeholder="30">
+                    <label for="frequency">Frequency (min)</label>
 
-                    <input type="text" id="first-train-time">
-                    <label for="first-train-time">First Train Time (HH:mm-military time)</label>
-
-                    <input type="number" id="frequency">
-                    <label id="frequency-label" for="frequency">Frequency (min)</label>
-
-                    <input id="trainBtn" type="submit" value="Submit">
+                    <input class="submit teal lighten-1 white-text z-depth-2" type="submit" value="Submit">
                 </form>
             </div>
+        </div>
+    </main>
 
-        </main>
-
-        <footer class="page-footer green darken-3 white-text center-align">
+    <footer class="page-footer teal lighten-1 white-text center-align">
             © 2019 Copyright Christopher Smith
-        </footer>
-    </div>
+    </footer>
 
-    <script src="./assets/js/fib.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="./assets/javascript/train.js"></script>
 </body>
 
 </html>
