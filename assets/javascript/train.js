@@ -1,20 +1,21 @@
 
 // Initialize Firebase
 var config = {
-apiKey: "AIzaSyDirwiAM1d_wyGqWQG2eS6Fs3z0LHzzK0o",
-authDomain: "train-scheduler-69387.firebaseapp.com",
-databaseURL: "https://train-scheduler-69387.firebaseio.com",
-projectId: "train-scheduler-69387",
-storageBucket: "train-scheduler-69387.appspot.com",
-messagingSenderId: "607503733624"
+    apiKey: "AIzaSyDYIK1Bf5Sw6tyAXrBp7NRWU-yV3dsKgpg",
+    authDomain: "train-scheduler-9de47.firebaseapp.com",
+    databaseURL: "https://train-scheduler-9de47.firebaseio.com",
+    projectId: "train-scheduler-9de47",
+    storageBucket: "train-scheduler-9de47.appspot.com",
+    messagingSenderId: "891733685667"
 };
 firebase.initializeApp(config);
+
 
 
 let trainData = firebase.database().ref();
 
 // Button for adding trains
-$(".submit").on("click", function() {
+$(".submit").on("click", function () {
     event.preventDefault();
     // Grabs user input
     let trainName = $("#train-name").val().trim();
@@ -44,7 +45,7 @@ $(".submit").on("click", function() {
 
 
 // Create Firebase event for adding trains to the database and a row in the html when a user adds an entry
-trainData.on("child_added", function(childSnapshot) {
+trainData.on("child_added", function (childSnapshot) {
 
     let data = childSnapshot.val();
     let trainNames = data.name;
